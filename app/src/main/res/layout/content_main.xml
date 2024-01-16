@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context=".fragments.login.LoginFragment">
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txv_whoAreYou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="116dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/who_are_you"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/image_user1"
+                android:layout_width="90dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="52dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txv_whoAreYou"
+                app:srcCompat="@drawable/round_supervised_user_circle_24" />
+
+            <TextView
+                android:id="@+id/txv_user1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="80dp"
+                android:clickable="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/add_user"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_user1"
+                app:layout_constraintTop_toBottomOf="@+id/txv_whoAreYou" />
+
+            <ImageView
+                android:id="@+id/image_user2"
+                android:layout_width="90dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="44dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_user1"
+                app:srcCompat="@drawable/round_supervised_user_circle_24" />
+
+            <ImageView
+                android:id="@+id/image_user3"
+                android:layout_width="90dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="44dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_user2"
+                app:srcCompat="@drawable/round_supervised_user_circle_24" />
+
+            <TextView
+                android:id="@+id/txv_user3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="96dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/add_user"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_user3"
+                app:layout_constraintTop_toBottomOf="@+id/txv_user2" />
+
+            <TextView
+                android:id="@+id/txv_user2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="96dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/add_user"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_user2"
+                app:layout_constraintTop_toBottomOf="@+id/txv_user1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

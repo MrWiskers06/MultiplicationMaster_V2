@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Multiplication Master</string>
+
+    <!--Fragments-->
+    <string name="title_users">Usuarios</string>
+    <string name="title_settings">Configuración</string>
+    <string name="title_train">¡A entrenar!</string>
+    <string name="title_contacts">Contactos</string>
+    <string name="title_favoriteContacs">Contactos favoritos</string>
+    <string name="title_statistics">Estadísticas</string>
+    <string name="title_sendStatistics">Enviar estadísticas</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar</string>
+
+    <!--Usuarios-->
+    <string name="who_are_you">¿Quién eres?</string>
+    <string name="add_user">Añadir usuario</string>
+
+    <!--Selección de avatar-->
+    <string name="textView_selectAvatar">Selecciona tu personaje favorito</string>
+    <string name="img_avatar_description">Imagen sobre el avatar para tu perfil.</string>
+    <string name="textView_avatarTrain">¿Conseguirás el avatar completo?</string>
+    <string name="itachi_avatar">Itachi</string>
+    <string name="sasuke_avatar">Sasuke</string>
+    <string name="hinata_avatar">Hinata</string>
+    <string name="kakashi_avatar">Kakashi</string>
+    <string name="naruto_avatar">Naruto</string>
+
+    <!--Selección de tabla-->
+    <string name="textView_selectTable">Selecciona una tabla</string>
+
+    <!--Diálogo de dificultad-->
+    <string name="button_selectDifficulty">Seleccionar dificultad</string>
+    <string name="choose_difficulty">Elige la dificultad de nivel</string>
+    <string name="easy_difficulty">Fácil - (Orden ascendente)</string>
+    <string name="normal_difficulty">Medio - (Orden descendente)</string>
+    <string name="hard_difficulty">Difícil - (Orden aleatorio)</string>
+    <string name="exit_dialog">Volver</string>
+
+    <!--Edit text Fecha-->
+    <string name="select_dateLbl">Selecciona la fecha de hoy</string>
+    <string name="select_date">¿Qué dia es hoy?</string>
+
+    <!--Statistics-->
+    <string name="txv_avatarsObtained">Avatares</string>
+    <string name="txv_selectedDate">Selecciona una fecha en la configuración</string>
+    <string name="mistakes">Errores cometidos</string>
+    <string name="message_noMistakes">¡FELICIDADES!</string>
+    <string name="success">% Aciertos</string>
+    <string name="progress">% Progreso</string>
+
+    <!--Send Statistics-->
+    <string name="edt_sendMail">Introduce un e-mail</string>
+    <string name="btn_sendMail">Enviar</string>
+
+    <!--Delete Statistics-->
+    <string name="title_deleteStatistics">Eliminar estadisticas</string>
+    <string name="txv_deleteStatistics">Se eliminarán todas las estadisticas, ¿estás seguro?</string>
+    <string name="btn_positiveDelete">OK</string>
+    <string name="btn_negativeDelete">Cancelar</string>
+
+    <!--Dinamics Dialogs-->
+    <string name="tittle_passwordDialog">Introduce tu contraseña</string>
+    <string name="tittle_passwordAddUser">Contraseña administrador</string>
+    <string name="tittle_addUserDialog">Introduce tu nombre</string>
+    <string name="btn_sendPassword">OK</string>
+
+    <!--Contacts-->
+    <string name="txv_contacts">Contactos</string>
+    <string name="txv_favoriteContacts">Contactos favoritos</string>
+    <string name="tittle_addFavoriteContact">Añadir a favoritos</string>
+    <string name="txv_addFavoriteContact">Se va a añadir a Contactos favoritos, ¿estás seguro?</string>
+    <string name="tittle_deleteFavoriteContact">Eliminar de favoritos</string>
+    <string name="txv_deleteFavoriteContact">Se va a eliminar un contacto de favoritos, ¿estás seguro?</string>
+
+</resources>

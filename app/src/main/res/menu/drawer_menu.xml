@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_logger"
+        android:icon="@drawable/round_supervised_user_circle_24"
+        android:title="@string/title_users" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_config_black_24dp"
+        android:title="@string/title_settings" />
+
+    <item
+        android:id="@+id/navigation_train"
+        android:icon="@drawable/ic_training_black_24dp"
+        android:title="@string/title_train" />
+
+    <item
+        android:id="@+id/navigation_contacts"
+        android:icon="@drawable/outline_contact_mail_24"
+        android:title="@string/title_contacts" />
+    <item
+        android:id="@+id/navigation_favoriteContacts"
+        android:icon="@drawable/outline_favorite_border_24"
+        android:title="@string/title_favoriteContacs" />
+    <item
+        android:id="@+id/navigation_statistics"
+        android:icon="@drawable/ic_stadistics_black_24dp"
+        android:title="@string/title_statistics" />
+    <item
+        android:id="@+id/navigation_sendStatistics"
+        android:icon="@drawable/outline_email_24"
+        android:title="@string/title_sendStatistics" />
+    <item
+        android:id="@+id/navigation_deleteStatistics"
+        android:icon="@drawable/outline_delete_24"
+        android:title="@string/title_deleteStatistics" />
+</menu>
