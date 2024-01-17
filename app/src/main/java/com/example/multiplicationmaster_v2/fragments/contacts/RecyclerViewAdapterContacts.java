@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapterContacts extends RecyclerView.Adapter<RecyclerViewAdapterContacts.ViewHolder> {
     private static ArrayList<Contact> contactsList;
-    private static FragmentManager fragmentManager;
+    private static FragmentManager fragmentManager; // Recibimos el FragmentManager por parametro para poder desplegar el dialog que nos permitira añadir contactos a favoritos
 
     // ViewHolder para representar cada elemento de la lista en el RecyclerView
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -29,13 +29,13 @@ public class RecyclerViewAdapterContacts extends RecyclerView.Adapter<RecyclerVi
             textViewName = view.findViewById(R.id.txv_contactsName);
             textViewMail = view.findViewById(R.id.txv_contactsMail);
 
-            view.setOnLongClickListener(new View.OnLongClickListener() {
+            view.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View v) {
+                public void onClick(View v) {
+                    // Abrimos el dialog para anadir un contacto favorito
                     Contact contact = new Contact(textViewName.getText().toString(), textViewMail.getText().toString());
                     AddFavoriteContactDialog addFavorite = new AddFavoriteContactDialog(contact);
                     addFavorite.show(fragmentManager, "addFavoriteContactDialog");
-                    return false;
                 }
             });
         }
@@ -73,7 +73,7 @@ public class RecyclerViewAdapterContacts extends RecyclerView.Adapter<RecyclerVi
         holder.getTextViewMail().setText(contact.getEmail());
     }
 
-    // Devolver el tamaño del conjunto de datos
+    // Devolver el tamaño del conjunto de datos (Lista de contactos)
     @Override
     public int getItemCount() {
         return contactsList.size();

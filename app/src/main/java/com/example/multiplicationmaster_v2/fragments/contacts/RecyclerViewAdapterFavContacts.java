@@ -22,9 +22,9 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapterFavContacts extends RecyclerView.Adapter<RecyclerViewAdapterFavContacts.ViewHolder> {
     private static ArrayList<Contact> contactsList;
-    private static FragmentManager fragmentManager;
-    private static ArrayList<String[]> tablesCompleted = StatisticsFragment.getTablesList();
-    private static ArrayList<String[]> mistakes = StatisticsFragment.getMistakesListWithStatId();
+    private static FragmentManager fragmentManager; // Recibimos el FragmentManager por parametro para poder desplegar el dialog que nos permitira eliminar contactos de favoritos
+    private static ArrayList<String[]> tablesCompleted = new ArrayList<>();
+    private static ArrayList<String[]> mistakes = new ArrayList<>();
     private static ArrayList<String> percentegesSuccess = MainActivity.getPercentegesSuccess();
 
     // ViewHolder para representar cada elemento de la lista en el RecyclerView
@@ -40,6 +40,8 @@ public class RecyclerViewAdapterFavContacts extends RecyclerView.Adapter<Recycle
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    tablesCompleted  = StatisticsFragment.getTablesList();
+                    mistakes = StatisticsFragment.getMistakesListWithStatId();
                     if (!tablesCompleted.isEmpty()) {
                         sendMail(v.getContext(), textViewMail.getText().toString().trim());
                     }

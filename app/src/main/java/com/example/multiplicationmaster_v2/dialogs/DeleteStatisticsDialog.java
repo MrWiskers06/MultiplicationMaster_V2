@@ -42,7 +42,7 @@ public class DeleteStatisticsDialog extends DialogFragment {
         builder.setPositiveButton(R.string.btn_positiveDelete, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                databaseDAO.deleteStatistics();
+                databaseDAO.deleteStatistics(); // Elimina las estadisticas de la base de datos
             }
         });
 

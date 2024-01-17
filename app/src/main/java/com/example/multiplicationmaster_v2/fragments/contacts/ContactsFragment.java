@@ -83,6 +83,7 @@ public class ContactsFragment extends Fragment {
                 String name = cursor.getString(1);
                 String email = cursor.getString(2);
 
+                // Inicializa y crea un contacto nuevo y lo añade a la lista de contactos para usar luego en el RecyclerView
                 Contact contact = new Contact(name, email);
                 contactsList.add(contact);
 

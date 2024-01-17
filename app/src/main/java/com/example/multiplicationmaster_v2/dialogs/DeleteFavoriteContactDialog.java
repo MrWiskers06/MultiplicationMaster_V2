@@ -44,7 +44,7 @@ public class DeleteFavoriteContactDialog extends DialogFragment {
         builder.setPositiveButton(R.string.btn_positiveDelete, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // Añade el contacto a la tabla de contactos favoritos
+                // Elimina el contacto de la tabla de contactos favoritos
                 databaseDAO.deleteFavoriteContact(contact);
             }
         });

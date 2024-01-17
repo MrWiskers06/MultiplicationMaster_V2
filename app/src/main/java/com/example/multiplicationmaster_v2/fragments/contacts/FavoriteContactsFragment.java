@@ -27,8 +27,8 @@ public class FavoriteContactsFragment extends Fragment {
         View root = binding.getRoot();
 
         databaseDAO = new DatabaseDAOImplement(MainActivity.getDatabase());
-        favoriteContactsList = databaseDAO.getFavoriteContacts();
-        initializeRecyclerView();
+        favoriteContactsList = databaseDAO.getFavoriteContacts(); // Recupera la lista de contactos favoritos de la base de datos
+        initializeRecyclerView(); // Inicializa el RecyclerView de los contactos favoritos
 
         return root;
     }

@@ -129,6 +129,7 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
     // Configura el Spinner de las tablas de multiplicar
     private void configureSpinnerTables(String selectedDate, String userName) {
         tablesList = databaseDAO.getTablesByDate(selectedDate, userName); // Recupera las tablas de una fecha con su StatId para un usuario concreto
+        setTablesList(tablesList);
 
         // Crea una lista de las tablas de una fecha para mostrar en el spinner
         spinnerTablesList = new ArrayList<>();
@@ -159,9 +160,11 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
             addAvatars(userName); // Añade los avatares conseguidos para el usuario seleccionado
         } else if (parent == spinnerDates) {
             String selectedDate = parent.getItemAtPosition(position).toString();
-            mailDate = selectedDate; // Guarda la fecha seleccionada en el spinner para mostrar en el mail
+            setMailDate(selectedDate);// Guarda la fecha seleccionada en el spinner para mostrar en el mail
+            //mailDate = selectedDate;
             configureSpinnerTables(selectedDate, userName);
             mistakesListWithStatId = databaseDAO.getMistakesWithStatId();
+            setMistakesListWithStatId(mistakesListWithStatId);
         } else if (parent == spinnerTables) {
             addMistakes(position);
         }
