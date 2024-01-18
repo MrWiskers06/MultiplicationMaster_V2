@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.multiplicationmaster_v2.MainActivity;
 import com.example.multiplicationmaster_v2.R;
 import com.example.multiplicationmaster_v2.dialogs.DeleteFavoriteContactDialog;
+import com.example.multiplicationmaster_v2.dialogs.StatisticsEmptyDialog;
 import com.example.multiplicationmaster_v2.fragments.statistics.StatisticsFragment;
 
 import java.util.ArrayList;
@@ -42,9 +44,16 @@ public class RecyclerViewAdapterFavContacts extends RecyclerView.Adapter<Recycle
                 public void onClick(View v) {
                     tablesCompleted  = StatisticsFragment.getTablesList();
                     mistakes = StatisticsFragment.getMistakesListWithStatId();
-                    if (!tablesCompleted.isEmpty()) {
-                        sendMail(v.getContext(), textViewMail.getText().toString().trim());
+                    if (tablesCompleted != null && mistakes != null) {
+                        if (!tablesCompleted.isEmpty()) {
+                            sendMail(v.getContext(), textViewMail.getText().toString().trim());
+                        }else {
+                            StatisticsEmptyDialog statisticsEmptyDialog = new StatisticsEmptyDialog();
+                            statisticsEmptyDialog.show(fragmentManager, "statisticsEmptyDialog");
+                            //Toast.makeText(v.getContext(), "No hay estadísticas", Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 }
             });
 

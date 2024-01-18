@@ -52,6 +52,8 @@
     <!--Send Statistics-->
     <string name="edt_sendMail">Enter an email</string>
     <string name="btn_sendMail">Send</string>
+    <string name="tittle_statistics_empty">No statistics!</string>
+    <string name="txv_statistics_empty">No statistics have been registered yet, practice some of the tables to be able to send the statistics.</string>
 
     <!--Delete Statistics-->
     <string name="title_deleteStatistics">Delete statistics!</string>

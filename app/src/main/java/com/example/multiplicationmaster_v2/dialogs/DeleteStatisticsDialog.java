@@ -35,7 +35,7 @@ public class DeleteStatisticsDialog extends DialogFragment {
         txvDeleteMessage = new TextView(requireActivity());
         txvDeleteMessage.setText(R.string.txv_deleteStatistics);
         txvDeleteMessage.setTextSize(18f);
-        txvDeleteMessage.setPadding(50, 0, 0, 0);
+        txvDeleteMessage.setPadding(50, 16, 16, 16);
         builder.setView(txvDeleteMessage);
 
         // Configurar el botón positivo del diálogo

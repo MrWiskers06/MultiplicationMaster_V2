@@ -1,5 +1,6 @@
 package com.example.multiplicationmaster_v2.fragments.contacts;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ public class FavoriteContactsFragment extends Fragment {
     private static FragmentFavoriteContactsBinding binding;
     private DatabaseDAO databaseDAO;
     private static ArrayList<Contact> favoriteContactsList;
+    private static RecyclerView.Adapter<RecyclerViewAdapterFavContacts.ViewHolder> recyclerViewAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentFavoriteContactsBinding.inflate(inflater, container, false);
@@ -46,7 +48,14 @@ public class FavoriteContactsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerView.Adapter<RecyclerViewAdapterFavContacts.ViewHolder> recyclerViewAdapter = new RecyclerViewAdapterFavContacts(requireActivity().getSupportFragmentManager(), favoriteContactsList); // Configurar el adaptador del RecyclerView con la lista de contactos
+        recyclerViewAdapter = new RecyclerViewAdapterFavContacts(requireActivity().getSupportFragmentManager(), favoriteContactsList); // Configurar el adaptador del RecyclerView con la lista de contactos
         recyclerView.setAdapter(recyclerViewAdapter);
+    }
+
+    // Metodo para actualizar el recyclerView, pero no funciona bien
+    @SuppressLint("NotifyDataSetChanged")
+    public static void updateFavList(Contact contact) {
+        favoriteContactsList.remove(contact);
+        recyclerViewAdapter.notifyDataSetChanged();
     }
 }

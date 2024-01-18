@@ -40,7 +40,7 @@ public class AddFavoriteContactDialog extends DialogFragment {
         txvAddFavorite = new TextView(requireActivity());
         txvAddFavorite.setText(R.string.txv_addFavoriteContact);
         txvAddFavorite.setTextSize(18f);
-        txvAddFavorite.setPadding(50, 0, 0, 0);
+        txvAddFavorite.setPadding(50, 16, 16, 16);
         builder.setView(txvAddFavorite);
 
         // Configurar el botón positivo del diálogo

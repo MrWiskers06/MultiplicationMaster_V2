@@ -52,11 +52,13 @@
     <!--Send Statistics-->
     <string name="edt_sendMail">Introduce un e-mail</string>
     <string name="btn_sendMail">Enviar</string>
+    <string name="tittle_statistics_empty">¡No hay estadisticas!</string>
+    <string name="txv_statistics_empty">Aun no se han registrado estadisticas, practica alguna de las tablas para poder enviar las estadisticas.</string>
 
     <!--Delete Statistics-->
     <string name="title_deleteStatistics">Eliminar estadisticas</string>
     <string name="txv_deleteStatistics">Se eliminarán todas las estadisticas, ¿estás seguro?</string>
-    <string name="btn_positiveDelete">OK</string>
+    <string name="btn_positiveDelete">Eliminar</string>
     <string name="btn_negativeDelete">Cancelar</string>
 
     <!--Dinamics Dialogs-->

@@ -35,10 +35,10 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
     private FragmentStatisticsBinding binding;
     private ImageView imgAvatarHinnata, imgAvatarItachi, imgAvatarKakashi, imgAvatarNaruto, imgAvatarSasuke; // Imagen del avatar seleccionado y conseguido al completo
     private ArrayList<String> datesList; // Fechas de las tablas practicadas
-    private static ArrayList<String[]> tablesList; // Tablas de multiplicar para una fecha con si Id
-    private static ArrayList<String> spinnerTablesList; // Lista de tablas de una fecha para mostrar en el spinner
-    private static ArrayList<String> mistakesList; // Lista de errores de una tabla seleccionada
-    private static ArrayList<String[]> mistakesListWithStatId; // Lista de errores con el Id del stat
+    private static ArrayList<String[]> tablesList = new ArrayList<>(); // Tablas de multiplicar para una fecha con si Id
+    private static ArrayList<String> spinnerTablesList = new ArrayList<>(); // Lista de tablas de una fecha para mostrar en el spinner
+    private static ArrayList<String> mistakesList = new ArrayList<>(); // Lista de errores de una tabla seleccionada
+    private static ArrayList<String[]> mistakesListWithStatId = new ArrayList<>(); // Lista de errores con el Id del stat
     private Spinner spinnerDates;
     private Spinner spinnerTables;
     private Spinner spinnerUsers;
@@ -47,6 +47,7 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
     private static String mailDate;
     private int currentTableProgress;
     private ProgressBar progressBarPercentageSuccess;
+    private TextView textViewPercentageSuccess;
     private GridLayout gridMistakes;
     private DatabaseDAO databaseDAO; // Conexión con la base de datos
 
@@ -62,6 +63,8 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
         spinnerDates = binding.spinnerDates;
         spinnerTables = binding.spinnerTables;
         gridMistakes = binding.gridMistakes;
+        progressBarPercentageSuccess = binding.pgbPercentageSuccess;
+        textViewPercentageSuccess = binding.txvPercentage;
 
         // Recupera los ImageView de los avatares
         imgAvatarHinnata = binding.imgHinnata;
@@ -155,6 +158,8 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
                 String currentDate = sdf.format(new Date());
                 configureSpinnerTables(currentDate, userName);
                 gridMistakes.removeAllViews();
+                progressBarPercentageSuccess.setProgress(0);
+                textViewPercentageSuccess.setText("");
             }
             configureImages(); // Configura el color de las imagenes en Blanco y Negro
             addAvatars(userName); // Añade los avatares conseguidos para el usuario seleccionado
@@ -177,7 +182,6 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
 
     // Añade los errores cometidos al GridLayout
     private void addMistakes(int position) {
-        progressBarPercentageSuccess = binding.pgbPercentageSuccess;
         gridMistakes.removeAllViews(); // Elimina los errores de la tabla de multiplicar anteriormente seleccionada
 
         // Obtener el Id_Stat de la tabla y fecha seleccionadas
@@ -218,7 +222,7 @@ public class StatisticsFragment extends Fragment implements AdapterView.OnItemSe
     private void addPercentagesSuccess(int successPercentage) {
         progressBarPercentageSuccess.setMax(100);
         // Obtiene el TextView que muestra el porcentaje de aciertos
-        TextView textViewPercentageSuccess = binding.txvPercentage;
+
         progressBarPercentageSuccess.setProgress(successPercentage);
         textViewPercentageSuccess.setText(successPercentage + " %");
     }

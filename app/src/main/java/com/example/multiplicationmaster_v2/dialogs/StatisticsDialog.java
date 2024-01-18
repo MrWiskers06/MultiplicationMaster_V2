@@ -44,13 +44,12 @@ public class StatisticsDialog extends DialogFragment {
         builder.setPositiveButton(R.string.btn_sendMail, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-                if (!tablesCompleted.isEmpty() && editTextEmail.getText().toString().trim().length() > 0) {
+                if (tablesCompleted.isEmpty() && editTextEmail.getText().toString().trim().length() > 0) {
+                    StatisticsEmptyDialog statisticsEmptyDialog = new StatisticsEmptyDialog();
+                    statisticsEmptyDialog.show(getParentFragmentManager(), "statisticsEmptyDialog");
+                    //Toast.makeText(getActivity(), "No hay estadísticas", Toast.LENGTH_LONG).show();
+                } else if (!tablesCompleted.isEmpty() && editTextEmail.getText().toString().trim().length() > 0) {
                     sendMail();
-                } else if (tablesCompleted.isEmpty() && editTextEmail.getText().toString().trim().length() > 0) {
-                    Toast.makeText(getActivity(), "No hay estadísticas", Toast.LENGTH_LONG).show();
-                } else if (editTextEmail.getText().toString().trim().length() == 0) {
-                    Toast.makeText(getActivity(), "Ingresa un email", Toast.LENGTH_LONG).show();
                 }
             }
         });
