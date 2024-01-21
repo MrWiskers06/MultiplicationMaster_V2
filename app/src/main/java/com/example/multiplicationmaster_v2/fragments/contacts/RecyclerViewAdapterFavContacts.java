@@ -53,7 +53,6 @@ public class RecyclerViewAdapterFavContacts extends RecyclerView.Adapter<Recycle
                             //Toast.makeText(v.getContext(), "No hay estadísticas", Toast.LENGTH_LONG).show();
                         }
                     }
-
                 }
             });
 
